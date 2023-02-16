@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const dedent = require('dedent');
 const fs = require('fs');
 
 const licenseBadges = {
@@ -88,48 +89,49 @@ inquirer
 
     .then((response) => {
         // console.log(response);
-        const data = `
-# ${response.title} ${licenseBadges[response.license]}
+        const data = dedent(`
+            # ${response.title} ${licenseBadges[response.license]}
 
-## Description
-${response.description}
+            ## Description
+            ${response.description}
 
-## Table of Contents
+            ## Table of Contents
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
-* [License](#license)
+            * [Installation](#installation)
+            * [Usage](#usage)
+            * [Credits](#credits)
+            * [Contributing](#contributing)
+            * [Tests](#tests)
+            * [Questions](#questions)
+            * [License](#license)
 
-## Installation
-${response.installation}
+            ## Installation
+            ${response.installation}
 
-## Usage
-${response.usage}
+            ## Usage
+            ${response.usage}
 
-## Credits
-${response.credits}
+            ## Credits
+            ${response.credits}
 
-## Contributing
-${response.contribution}
+            ## Contributing
+            ${response.contribution}
 
-## Tests
-${response.testing}
+            ## Tests
+            ${response.testing}
 
-## Questions?
-If you have any questions or issues, feel free to reach out to me through any of the following channels:
+            ## Questions?
+            If you have any questions or issues, feel free to reach out to me through any of the following channels:
 
-* GitHub: [${response.username}](${response.username}).
-* Email: [${response.email}](mailto:${response.email}).
+            * GitHub: [${response.username}](https://github.com/${response.username}).
+            * Email: [${response.email}](mailto:${response.email}).
 
-I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
 
-## License
-This project is licensed under the ${response.license}. 
-`;
+            I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
+
+            ## License
+            This project is licensed under the ${response.license}. 
+        `);
 
         fs.writeFile('README.md', data, function (err) {
 

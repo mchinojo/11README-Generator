@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mchinojo/11README-Generator#readme",
   "dependencies": {
+    "dedent": "^0.7.0",
     "inquirer": "^8.2.5"
   }
 }

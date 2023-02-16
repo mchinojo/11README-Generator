@@ -1,8 +1,7 @@
-
-# Ballenapp [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+# s [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Description
-App para ballenas.
+s
 
 ## Table of Contents
 
@@ -15,26 +14,28 @@ App para ballenas.
 * [License](#license)
 
 ## Installation
-Comprar un bote y kit para bucear.
+s
 
 ## Usage
-Tienes que pedirle a una ballena que te preste su ballenocelular.
+s
 
 ## Credits
-Todas las ballenas.
+s
 
 ## Contributing
-No tocar a las ballenas.
+s
 
 ## Tests
-Ver si las ballenas están felices.
+s
 
 ## Questions?
 If you have any questions or issues, feel free to reach out to me through any of the following channels:
 
-* GitHub: [https://github.com/mchinojo](https://github.com/mchinojo).
-* Email: [mchinojo@uc.cl]('mailto:mchinojo@uc.cl').
+* GitHub: [s](https://github.com/s).
+* Email: [s](mailto:s).
+
+
 I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
 
 ## License
-This project is licensed under the BSD 2-Clause "Simplified" License. 
+This project is licensed under the BSD 3-Clause "New" or "Revised" License.
