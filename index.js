@@ -122,8 +122,9 @@ ${response.testing}
 ## Questions?
 If you have any questions or issues, feel free to reach out to me through any of the following channels:
 
-GitHub: [${response.username}](${response.username}).
-Email: [${response.email}](${response.email}).
+* GitHub: [${response.username}](${response.username}).
+* Email: [${response.email}](mailto:${response.email}).
+
 I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
 
 ## License

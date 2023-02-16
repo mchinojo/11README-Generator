@@ -1,30 +1,40 @@
 
-# Protoapp [![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)
+# Ballenapp [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 ## Description
-This is a app for protozoa.
+App para ballenas.
 
 ## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 * [License](#license)
 
 ## Installation
-Please look up for a protozoo first and then console.log it.
+Comprar un bote y kit para bucear.
 
 ## Usage
-Please wear gloves.
+Tienes que pedirle a una ballena que te preste su ballenocelular.
 
 ## Credits
-Thanks to All the protista kingdom.
+Todas las ballenas.
 
 ## Contributing
-Please refer to each project's style and contribution guidelines for submitting patches and additions.
+No tocar a las ballenas.
 
 ## Tests
-We typically rely on CI to run our tests, so some large test-only dependencies are considered optional.
+Ver si las ballenas están felices.
+
+## Questions?
+If you have any questions or issues, feel free to reach out to me through any of the following channels:
+
+* GitHub: [https://github.com/mchinojo](https://github.com/mchinojo).
+* Email: [mchinojo@uc.cl]('mailto:mchinojo@uc.cl').
+I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
 
 ## License
-Eclipse Public License 2.0 
+This project is licensed under the BSD 2-Clause "Simplified" License. 
