@@ -66,6 +66,16 @@ inquirer
     ])
 
     .then((response) => {
-        console.log(response);
+        // console.log(response);
+        const data = JSON.stringify(response);
+        fs.writeFile('README.md', data, function (err) {
+
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log('Saved!');
+
+        });
     });
 
