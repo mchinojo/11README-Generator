@@ -1,6 +1,7 @@
-const inquirer = require('inquirer');
-const dedent = require('dedent');
-const fs = require('fs');
+import inquirer from 'inquirer';
+import dedent from "dedent";
+import fs from 'fs/promises';
+
 
 const licenseBadges = {
     'Apache License 2.0': '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
@@ -18,7 +19,7 @@ const licenseBadges = {
     'The Unlicense': '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
 };
 
-inquirer
+let response = await inquirer
     .prompt([
         {
             type: 'input',
@@ -42,7 +43,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter your collaborators',
+            message: 'Enter the credits information',
             name: 'credits',
         },
         {
@@ -57,7 +58,7 @@ inquirer
         },
         {
             type: 'rawlist',
-            message: 'Choose a license for your app',
+            message: 'Choose a license for your project',
             name: 'license',
             choices: [
                 'Apache License 2.0',
@@ -87,61 +88,58 @@ inquirer
         }
     ])
 
-    .then((response) => {
-        // console.log(response);
-        const data = dedent(`
-            # ${response.title} ${licenseBadges[response.license]}
 
-            ## Description
-            ${response.description}
+const data = dedent(`
+    # ${response.title} ${licenseBadges[response.license]}
 
-            ## Table of Contents
+    ## Description
+    ${response.description}
 
-            * [Installation](#installation)
-            * [Usage](#usage)
-            * [Credits](#credits)
-            * [Contributing](#contributing)
-            * [Tests](#tests)
-            * [Questions](#questions)
-            * [License](#license)
+    ## Table of Contents
 
-            ## Installation
-            ${response.installation}
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [Contributing](#contributing)
+    * [Tests](#tests)
+    * [Questions](#questions)
+    * [License](#license)
 
-            ## Usage
-            ${response.usage}
+    ## Installation
+    ${response.installation}
 
-            ## Credits
-            ${response.credits}
+    ## Usage
+    ${response.usage}
 
-            ## Contributing
-            ${response.contribution}
+    ## Credits
+    ${response.credits}
 
-            ## Tests
-            ${response.testing}
+    ## Contributing
+    ${response.contribution}
 
-            ## Questions?
-            If you have any questions or issues, feel free to reach out to me through any of the following channels:
+    ## Tests
+    ${response.testing}
 
-            * GitHub: [${response.username}](https://github.com/${response.username}).
-            * Email: [${response.email}](mailto:${response.email}).
+    ## Questions?
+    If you have any questions or issues, feel free to reach out to me through any of the following channels:
+
+    * GitHub: [${response.username}](https://github.com/${response.username}).
+    * Email: [${response.email}](mailto:${response.email}).
 
 
-            I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
+    I'm always happy to help and would love to hear from you if you have any feedback or suggestions for improving this project.
 
-            ## License
-            This project is licensed under the ${response.license}. 
-        `);
+    ## License
+    This project is licensed under the ${response.license}. 
+`);
 
-        fs.writeFile('README.md', data, function (err) {
+fs.writeFile('generated-README.md', data, function (err) {
 
-            if (err) {
-                console.error(err);
-                return;
-            }
-            console.log('Saved!');
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log('Saved!');
 
-        });
-    });
-
+});
 
