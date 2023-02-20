@@ -39,7 +39,7 @@ The generated README will be located in the same directory as index.mjs, and wil
 
 Here's a GIF that shows how the application should work:
 
-<img src='assets/demo-application.gif' height="400px" alt="Demo of the application">
+<center><img src='assets/demo-application.gif' height="400px" alt="Demo of the application"></center>
 
 ## Credits
 This project was made possible with the guidance and support of my instructors and teaching assistants. I also used various resources to create this project, including:

@@ -1,8 +1,9 @@
+// Import necessary libraries
 import inquirer from 'inquirer';
 import dedent from "dedent";
 import fs from 'fs/promises';
 
-
+// An object that stores the URLs of some license badges.
 const licenseBadges = {
     'Apache License 2.0': '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
     'GNU General Public License v3.0': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
@@ -19,6 +20,8 @@ const licenseBadges = {
     'The Unlicense': '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
 };
 
+// Prompt user for information about the README content, 
+// and storing the responses in the "response" variable.
 let response = await inquirer
     .prompt([
         {
@@ -88,7 +91,7 @@ let response = await inquirer
         }
     ])
 
-
+// Create a variable with the contents of the README file using the user's input.
 const data = dedent(`
     # ${response.title} ${licenseBadges[response.license]}
 
@@ -133,13 +136,15 @@ const data = dedent(`
     This project is licensed under the ${response.license}. 
 `);
 
+// Write the contents of the README file to a file named "generated-README.md".
 fs.writeFile('generated-README.md', data, function (err) {
 
     if (err) {
+        // If there is an error writing the file, log the error message.
         console.error(err);
         return;
     }
+    // If the file is successfully written, log "Saved!"
     console.log('Saved!');
-
 });
 
